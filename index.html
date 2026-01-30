@@ -1,11 +1,230 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Formúlario Completo</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <h1>Hello, World!</h1>
+    <main>
+      <form class="form">
+        <h1>Cadastro Completo</h1>
+
+        <!-- TEXTO -->
+        <label for="full-name">
+          Nome Completo:
+          <input
+            type="text"
+            id="full-name"
+            name="nome"
+            required
+            minlength="3"
+            maxlength="50"
+            placeholder="Digite seu nome"
+          />
+          <span class="error">Nome inválido</span>
+        </label>
+        <!-- EMAIL -->
+        <label for="email">
+          E-mail:
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="exemple@gmail.com"
+          />
+          <span class="error">E-mail inválido</span>
+        </label>
+        <!-- SENHA -->
+        <label for="password">
+          Senha:
+          <input
+            type="password"
+            id="password"
+            name="senha"
+            required
+            minlength="6"
+            maxlength="24"
+            placeholder="Digite sua senha"
+          />
+          <span class="error">Mínimo 6 caracteres</span>
+        </label>
+        <!-- NÚMERO -->
+        <label for="age">
+          Idade:
+          <input
+            type="number"
+            id="age"
+            name="idade"
+            required
+            min="18"
+            max="100"
+            placeholder="Digite sua idade"
+          />
+          <span class="error">Idade entre 18 e 100 anos</span>
+        </label>
+        <!-- TELEFONE -->
+        <label for="phone">
+          Telefone:
+          <input
+            type="tel"
+            id="phone"
+            name="telefone"
+            required
+            pattern="[0-9]{9}"
+            placeholder="EX: 84 123 4567"
+          />
+          <span class="error">Telefone inválido</span>
+        </label>
+        <!-- DATA -->
+        <label for="birthdate">
+          Data de Nascimento:
+          <input type="date" id="birthdate" name="nascimento" required />
+          <span class="error">Data inválida</span>
+        </label>
+        <!-- URL -->
+        <label for="website">
+          Website:
+          <input
+            type="url"
+            id="website"
+            name="website"
+            required
+            placeholder="https://example.com"
+          />
+          <span class="error">URL inválida</span>
+        </label>
+        <!-- SELECT -->
+        <label for="country">
+          País:
+          <select id="country" name="pais" required>
+            <option value="" selected disabled>Selecione seu país</option>
+            <option value="moçambique">Moçambique</option>
+            <option value="brasil">Brasil</option>
+            <option value="portugal">Portugal</option>
+            <option value="angola">Angola</option>
+          </select>
+          <span class="error">Seleção obrigatória</span>
+        </label>
+        <!-- RADIO -->
+        <fieldset>
+          <legend>Gênero</legend>
+          <label for="male">
+            <input
+              type="radio"
+              name="genero"
+              value="masculino"
+              required
+              id="male"
+            />
+            Masculino
+          </label>
+          <label for="female">
+            <input type="radio" name="genero" value="feminino" id="female" />
+            Feminino
+          </label>
+          <label>
+            <input type="radio" name="genero" value="outro" />
+            Outro
+          </label>
+          <span class="error">Seleção obrigatória</span>
+        </fieldset>
+        <!-- RANGE -->
+        <label for="experience">
+          Nível de Experiência:
+          <input
+            type="range"
+            id="experience"
+            name="experiencia"
+            required
+            min="0"
+            max="10"
+          />
+          <span class="error">Seleção obrigatória</span>
+        </label>
+        <!-- COLOR -->
+        <label for="favorite-color">
+          Cor Favorita:
+          <input
+            type="color"
+            id="favorite-color"
+            name="cor-favorita"
+            required
+          />
+          <span class="error">Seleção obrigatória</span>
+        </label>
+        <!-- FILE -->
+        <label for="profile-picture">
+          Foto de Perfil:
+          <input
+            type="file"
+            id="profile-picture"
+            name="foto-perfil"
+            required
+            accept="image/*"
+          />
+          <span class="error">Seleção obrigatória</span>
+        </label>
+        <!-- TEXTAREA -->
+        <label for="about">
+          Fale um pouco Sobre Você:
+          <textarea
+            id="about"
+            name="sobre"
+            required
+            minlength="10"
+            maxlength="300"
+            placeholder="Fale um pouco sobre você"
+          ></textarea>
+          <span class="error">Texto inválido</span>
+        </label>
+        <!-- READONLY / DISABLED -->
+        <label for="user-code">
+          Código do Usuário:
+          <input
+            type="text"
+            id="user-code"
+            name="codigo-usuario"
+            value="USR123456"
+            readonly
+          />
+        </label>
+        <label for="disabled-field">
+          Campo Desabilitado:
+          <input
+            type="text"
+            id="disabled-field"
+            name="campo-desabilitado"
+            value="Não pode editar"
+            disabled
+          />
+        </label>
+        <!-- CHECKBOX -->
+        <label for="terms">
+          <input
+            type="checkbox"
+            id="terms"
+            name="termos"
+            value="aceito"
+            required
+          />
+          Aceito os termos e condições
+          <span class="error">Você deve aceitar os termos</span>
+        </label>
+        <!-- BOTAO -->
+        <div class="buttons">
+          <button type="reset">Limpar</button>
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <address>
+        <p>Desenvolvido por Fábio Tomás Alberto Naene - &copy; 2026</p>
+        <p>Email: fabiotomasnaene@gmail.com</p>
+      </address>
+    </footer>
   </body>
 </html>
